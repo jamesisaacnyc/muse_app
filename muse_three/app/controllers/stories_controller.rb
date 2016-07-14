@@ -42,7 +42,7 @@ end
 private
 
 def story_params
-	params.require(:story).permit(:title, :description)
+	params.require(:story).permit(:title, :description, :image)
 end
 
 def find_story

@@ -1,3 +1,3 @@
-%h1 This is the Stories index
 - @stories.each do |story|
+	= link_to (image_tag story.image.url(:medium)), story
 	%h2= link_to story.title, story
