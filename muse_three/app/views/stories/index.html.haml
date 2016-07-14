@@ -1,0 +1,4 @@
+%h1 This is the Stories index
+= link_to "New Story", new_story_path
+- @stories.each do |story|
+	%h2= link_to story.title, story
