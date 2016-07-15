@@ -1,9 +1,10 @@
+0 lines (16 sloc)  511 Bytes
 = simple_form_for @story, html: { multipart: true } do |f|
 	- if @story.errors.any?
 		#errors
 			%h2
 				= pluralize(@story.errors.count, "error")
-				prevented this story from saving
+				prevented this Story from saving
 			%ul
 				- @story.errors.full_messages.each do |msg|
 					%li= msg

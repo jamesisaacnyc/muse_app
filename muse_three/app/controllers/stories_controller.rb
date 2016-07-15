@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
-	before_action :find_story, only: [:show, :edit, :update, :destroy]
+	before_action :find_story, only: [:show, :edit, :update, :destroy, :upvote]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def destroy
 		@story.destroy
@@ -38,6 +39,12 @@ def update
 		render 'edit'
 	end	
 end
+
+def upvote 
+	@story.upvote_by current_user
+	redirect_to :back
+end
+
 
 private
 

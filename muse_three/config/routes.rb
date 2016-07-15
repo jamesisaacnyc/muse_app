@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-resources :stories
-root "stories#index"
+  resources :stories do
+  	member do
+  		put "like", to: "stories#upvote"
+  	end
+  end
+
+  root "stories#index"
 end
