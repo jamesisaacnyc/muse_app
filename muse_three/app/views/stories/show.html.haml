@@ -11,7 +11,7 @@
 					.col-md-6
 						%p.user
 						Submitted by
-						= @story.user.email	
+						= link_to @story.user.email, user_path 
 					.col-md-6
 						.btn-group.pull-right	
 							= link_to like_story_path(@story), method: :put, class: "btn btn-default" do 
